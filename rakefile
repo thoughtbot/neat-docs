@@ -1,0 +1,8 @@
+require 'rubygems'
+require 'bundler'
+
+task :default => [:generate]
+
+task :generate do
+  system('neat install')
+end
