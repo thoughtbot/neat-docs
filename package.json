@@ -1,0 +1,10 @@
+{
+  "name": "neat-docs",
+  "version": "1.7.0-pre",
+  "description": "Docs for Bourbon Neat",
+  "author": "thoughtbot, Inc",
+  "license": "MIT",
+  "dependencies": {
+    "sassdoc": "^1.2.0-rc.1"
+  }
+}
