@@ -4,7 +4,7 @@
   "description": "Docs for Bourbon Neat",
   "author": "thoughtbot, Inc",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "sassdoc": "^1.2.0-rc.1"
   }
 }
