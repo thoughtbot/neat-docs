@@ -1,0 +1,15 @@
+%label {
+  border-radius: $base-border-radius * 3;
+  border: 1px solid darken($background-color, 40%);
+  color: darken($background-color, 40%);
+  font-size: 0.8em;
+}
+
+%style--type-heading {
+  background: rgba($heading-background-color, 0.3);
+  color: shade($heading-background-color, 30%);
+  font-family: $sans-serif-alt;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,28 @@
+
+// scale animation
+
+@include keyframes(scale) {
+  0% {
+    @include transform(scale(1.0));
+  }
+  50% {
+    @include transform(scale(2.0));
+  }
+  100% {
+    @include transform(scale(1.0));
+  }
+}
+
+// slide animation
+
+@include keyframes(slide) {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100px;
+  }
+  100% {
+    left: 0;
+  }
+}

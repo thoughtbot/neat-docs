@@ -1,0 +1,26 @@
+.main-content {
+  @include media($medium-screen) {
+    @include calc(width, '100% - #{$docs-nav-width}');
+    margin-left: $docs-nav-width;
+  }
+}
+
+.main-inner {
+  .tagline {
+    margin: 0;
+  }
+
+  .type-title {
+    @extend %style--type-heading;
+    background: $base-accent-color;
+    color: #FFF;
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    padding: 1.2em 0 1em;
+
+    [data-role=content-wrapper] {
+      display: block;
+    }
+  }
+}

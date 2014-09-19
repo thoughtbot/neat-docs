@@ -4,6 +4,6 @@ require 'bundler'
 task :default => [:generate]
 
 task :generate do
-  system('neat install')
-  system('sassdoc neat docs')
+  system('bundle exec neat install')
+  system('sassdoc neat/ docs/')
 end

@@ -1,0 +1,57 @@
+.parameters {
+  .name {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .meta {
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 0.5em;
+    margin-bottom: 0;
+  }
+
+  .type-label {
+    border: 1px solid darken($background-color, 40%);
+  }
+
+  .required-label {
+    background: transparent;
+    color: $orange;
+    border: 1px solid $orange;
+  }
+
+  .default-label {
+    @extend .required-label;
+    background: transparent;
+    color: $base-accent-color;
+    display: inline-block;
+    border-color: $base-accent-color;
+
+    code {
+      background: transparent;
+      border: none;
+      color: $base-accent-color;
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+
+  .description {
+    margin-top: 0;
+    padding-left: 1em;
+
+    p {
+      margin-top: 0.7em;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1em;
+  }
+
+  dd {
+    margin-left: 0;
+  }
+}

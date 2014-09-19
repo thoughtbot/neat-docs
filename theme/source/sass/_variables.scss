@@ -1,0 +1,34 @@
+$sans-serif: "Nunito", $helvetica;
+$sans-serif-alt: "Titillium Web", $helvetica;
+$astral: #3C81A6;
+$background-color: #FAF8F2;
+$blue: #477DCA;
+$havelock-blue: #53AEE0;
+$highlight-color: hsl(44, 87%, 96%);
+$light-gray: #DDD;
+$light-orange: #FFC86E;
+$orange: hsl(14, 97%, 55%);
+$teal: #70DACD;
+
+$base-border-color: hsl(43, 23%, 90%);
+$base-font-size: 1em;
+$base-font-family: $sans-serif;
+$small-font-size: 13px;
+$base-line-height: 1.5;
+$base-spacing: $base-line-height * 1em;
+$base-accent-color: mix($havelock-blue, $astral);
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+$heading-background-color: darken($background-color, 5%);
+
+$base-font-color: #424242;
+$base-font-color-alt: #8B8880;
+$header-font-color: #222;
+$link-color: $orange;
+
+$docs-nav-width: 280px;
+$highlight-padding: 3rem;
+$base-border-radius: 0.4em;
+
+$medium-screen: 960px;
+$large-screen: 1250px;

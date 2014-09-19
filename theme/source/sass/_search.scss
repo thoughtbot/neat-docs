@@ -1,0 +1,101 @@
+$half-baked: #86BFC8;
+$sea-mist: #C3D9CC;
+$bouquet: #B587A2;
+
+$item-types: (
+  mixin: $half-baked,
+  function: $sea-mist,
+  variable: $bouquet,
+);
+
+.search-bar {
+  padding: 2em 0;
+
+  .meta-data {
+    float: left;
+    font-family: $sans-serif-alt;
+    text-align: center;
+
+    h1 {
+      display: inline-block;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-weight: 100;
+    }
+  }
+
+  .search-form {
+    min-width: em(300);
+    float: right;
+    position: relative;
+
+    @include media(max-width em(630)) {
+      width: 100%;
+      margin-top: 1em;
+    }
+
+    input {
+      margin-bottom: 0;
+    }
+  }
+
+  .suggestion-container {
+    background: rgba(#FFF, 0.95);
+    border-radius: $base-border-radius;
+    box-shadow: 0 0 10px rgba(#000, 0.2);
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 1.7em;
+    width: 100%;
+  }
+
+  .result {
+    border-bottom: 1px solid rgba($base-border-color, 0.5);
+
+    &:first-child {
+      a {
+        border-top-left-radius: $base-border-radius;
+        border-top-right-radius: $base-border-radius;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+
+      a {
+        border-bottom-left-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+      }
+    }
+
+    @each $type, $color in $item-types {
+      &[data-type=#{$type}] {
+        code {
+          background: $color;
+        }
+      }
+    }
+
+    a {
+      color: darken($background-color, 60%);
+      padding: 1em;
+      display: block;
+
+      &:hover {
+        background: $background-color;
+      }
+    }
+
+    code {
+      border: none;
+      color: #FFF;
+      font-size: 0.9em;
+      margin-right: 0.5em;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "bourbon/bourbon";
+@import "normalize/normalize";
+@import "variables";
+@import "../../../neat/neat";
+@import "base";
+@import "extends";
+@import "main-content";
+@import "navigation";
+@import "code-highlighting";
+@import "animation-keyframes";
+@import "solarized";
+@import "parameters";
+@import "item";
+@import "example";
+@import "search";
+@import "forms";
+
+table {
+  border-collapse: collapse;
+  margin: ($base-line-height / 2) 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid darken($base-border-color, 15%);
+  font-weight: bold;
+  padding: ($base-line-height / 2) 0;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid $base-border-color;
+  padding: ($base-line-height / 2) 0;
+}
+
+tr, td, th {
+  vertical-align: middle;
+}

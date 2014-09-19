@@ -1,0 +1,81 @@
+html, body {
+  color: $base-font-color;
+  font-family: $sans-serif;
+  font-size: $base-font-size;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+html {
+  padding: 0;
+}
+
+h1 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+h1, h2 {
+  color: $header-font-color;
+  font-size: golden-ratio(14px, 1) + 4px;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
+p, div.highlight {
+  & + h2 {
+    margin-top: 2em;
+  }
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-top: 2em;
+}
+
+h4, h5, h6 {
+  font-size: golden-ratio(13px, 0);
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+a, a:active, a:visited {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darken($link-color, 15%);
+}
+
+.alert {
+  color: $base-font-color-alt;
+  font-size: $small-font-size;
+  font-style: italic;
+}
+
+[data-role=content-wrapper] {
+  @include outer-container;
+  max-width: rem(960);
+  padding: 0 1.5em;
+}
+
+[class$=label] {
+  @extend %label;
+  padding: 0.2em 1em;
+}

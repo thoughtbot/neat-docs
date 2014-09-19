@@ -1,0 +1,19 @@
+.example {
+  pre {
+    position: relative;
+  }
+
+  .description {
+    background-color: #FFF;
+    border-bottom-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    color: darken($background-color, 40%);
+    font-family: $sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    padding: 0.5em 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

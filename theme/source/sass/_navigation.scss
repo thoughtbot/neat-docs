@@ -1,0 +1,114 @@
+.logo {
+  width: 5em;
+  margin: 0 auto;
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+nav.side-nav {
+  @include position(fixed, 0px null null 0px);
+  background-color: lighten($background-color, 2%);
+  border-right: 1px solid $heading-background-color;
+  overflow: auto;
+  display: none;
+  height: 100%;
+
+  @include media($medium-screen) {
+    width: $docs-nav-width;
+    display: block;
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+
+      &:first-of-type {
+        a {
+          border-top: 1px solid $heading-background-color;
+        }
+      }
+
+      &.deprecated {
+        text-decoration: line-through;
+      }
+
+      &.title {
+        a {
+          @extend %style--type-heading;
+          padding: 0.7rem;
+          font-size: 0.8em;
+        }
+
+        .type-heading {
+          margin: 0;
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+      }
+
+      a {
+        @include transition;
+        border-bottom: 1px solid $heading-background-color;
+        color: #555;
+        display: block;
+        padding: 0.7rem;
+        position: relative;
+
+        &:hover {
+          background: #FFF;
+        }
+
+        &.active, &.inview {
+          &:before {
+            @include position(absolute, 1.2em 1em null null);
+            @include size(8px);
+            background: #CCC;
+            border-radius: 50%;
+            content: '';
+            display: block;
+          }
+        }
+
+        &.active {
+          &:before {
+            background: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+.social {
+  @include clearfix;
+  background: shade($background-color, 50%);
+  margin-top: 0;
+  padding: .25em 4em;
+
+  li {
+    @include calc(width, '100% / 3');
+    display: inline-block;
+    float: left;
+  }
+
+  a {
+    @include hide-text;
+    @include size(25px);
+    background: url('../images/social-icons.svg') no-repeat center center;
+    background-size: 300%;
+    display: block;
+    margin: 0 auto;
+
+    &.twitter {
+      background-position: left center;
+    }
+
+    &.gitter {
+      background-position: right center;
+    }
+  }
+}

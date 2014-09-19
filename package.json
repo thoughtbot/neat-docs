@@ -2,9 +2,30 @@
   "name": "neat-docs",
   "version": "1.7.0-pre",
   "description": "Docs for Bourbon Neat",
+  "title": "Bourbon Neat Docs",
   "author": "thoughtbot, Inc",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaishin/neat-docs.git"
+  },
   "devDependencies": {
-    "sassdoc": "^1.2.0-rc.1"
+    "browser-sync": "^1.3.5",
+    "coffee-script": "^1.7.1",
+    "extend": "1.*",
+    "gulp": "^3.8.7",
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-coffee": "^2.1.1",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-sassdoc": "^0.1.3",
+    "gulp-shell": "^0.2.9",
+    "gulp-util": "^3.0.0",
+    "sassdoc": "^1.5.0",
+    "sassdoc-filter": "^1.0.0",
+    "sassdoc-indexer": "^1.0.0",
+    "swig": "1.3.*",
+    "swig-extras": "0.*",
+    "themeleon": "1.*",
+    "themeleon-swig": "1.*"
   }
 }
