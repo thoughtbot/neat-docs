@@ -10,7 +10,8 @@ deploy = require "gulp-gh-pages"
 neatDocs = require "./package.json"
 version = neatDocs.version.replace(/\./g, "-")
 
-gulp.task "default", ["browser-sync", "watch"]
+gulp.task "develop", ["browser-sync", "watch"]
+gulp.task "default", ["update", "generate", "deploy"]
 
 gulp.task "watch", ->
   gulp.watch "theme/source/sass/*.scss", ["sass"]
@@ -35,6 +36,8 @@ gulp.task "coffee", ->
     .pipe gulp.dest("theme/assets/js")
     .pipe gulp.dest("docs/#{version}/assets/js")
     .pipe browserSync.reload(stream: true)
+
+gulp.task "update", shell.task("bundle update neat && bundle exec neat update")
 
 gulp.task "sassdoc", shell.task("sassdoc ./neat ./docs/#{version}/ -t 'theme'")
 
