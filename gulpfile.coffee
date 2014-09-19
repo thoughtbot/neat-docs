@@ -5,6 +5,7 @@ coffee = require "gulp-coffee"
 prefix = require "gulp-autoprefixer"
 shell = require "gulp-shell"
 gutil = require "gulp-util"
+deploy = require "gulp-gh-pages"
 
 neatDocs = require "./package.json"
 version = neatDocs.version.replace(/\./g, "-")
@@ -48,3 +49,6 @@ gulp.task "generate", ["sass", "coffee", "sassdoc"], ->
   gulp.src "./docs/#{version}/*"
     .pipe gulp.dest "./docs/latest/"
 
+gulp.task "deploy", ->
+  gulp.src "./docs/"
+    .pipe deploy()
