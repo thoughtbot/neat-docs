@@ -9,7 +9,6 @@ _sass/
 examples/
 css/
 _config.yml
-index.html
 pkg
 Gemfile.lock
 neat/
