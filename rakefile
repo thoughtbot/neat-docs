@@ -1,9 +1,0 @@
-require 'rubygems'
-require 'bundler'
-
-task :default => [:generate]
-
-task :generate do
-  system('bundle exec neat install')
-  system('sassdoc neat/ docs/')
-end
