@@ -46,7 +46,7 @@ gulp.task "browser-sync", ["sass", "coffee"], ->
     open: false
 
 gulp.task "generate", ["sass", "coffee", "sassdoc"], ->
-  gulp.src "./docs/#{version}/*"
+  gulp.src "./docs/#{version}/**/*"
     .pipe gulp.dest "./docs/latest/"
 
 gulp.task "deploy", ->
