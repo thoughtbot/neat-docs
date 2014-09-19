@@ -50,5 +50,5 @@ gulp.task "generate", ["sass", "coffee", "sassdoc"], ->
     .pipe gulp.dest "./docs/latest/"
 
 gulp.task "deploy", ->
-  gulp.src "./docs/"
+  gulp.src "./docs/**/*"
     .pipe deploy()
