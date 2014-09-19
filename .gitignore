@@ -11,6 +11,5 @@ css/
 _config.yml
 pkg
 Gemfile.lock
-neat/
 node_modules/
 js/
