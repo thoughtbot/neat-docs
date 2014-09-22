@@ -45,6 +45,7 @@ gulp.task "sassdoc", ->
     .pipe sassdoc
       dest: "./docs/latest/"
       theme: "theme"
+      config: "./theme/view.json"
 
 gulp.task "browser-sync", ["sass", "coffee"], ->
   browserSync.init null,
