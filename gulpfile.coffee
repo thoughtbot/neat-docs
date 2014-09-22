@@ -1,6 +1,7 @@
 gulp = require "gulp"
 browserSync = require "browser-sync"
 sass = require "gulp-ruby-sass"
+sassdoc = require "gulp-sassdoc"
 coffee = require "gulp-coffee"
 prefix = require "gulp-autoprefixer"
 shell = require "gulp-shell"
@@ -39,7 +40,11 @@ gulp.task "coffee", ->
 
 gulp.task "update", shell.task("bundle update neat && bundle exec neat update")
 
-gulp.task "sassdoc", shell.task("sassdoc ./neat ./docs/latest/ -t 'theme'")
+gulp.task "sassdoc", ->
+  gulp.src "./neat"
+    .pipe sassdoc
+      dest: "./docs/latest/"
+      theme: "theme"
 
 gulp.task "browser-sync", ["sass", "coffee"], ->
   browserSync.init null,

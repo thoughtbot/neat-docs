@@ -5,7 +5,7 @@
     <dt class="parameter">
       <code class="name">${{ parameter.name }}</code>
       <ul class="meta">
-        <span class="type-label">{{ parameter.type | split('|') | trim | join(', ') }}</span>
+        <span class="type-label">{{ parameter.type | split("|") | trim | join(", ") }}</span>
         {% if not parameter.default %}
           <span class="required-label">Required</span>
         {% else %}
