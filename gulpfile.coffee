@@ -12,7 +12,7 @@ neatDocs = require "./package.json"
 version = neatDocs.version.replace(/\./g, "-")
 
 gulp.task "develop", ["browser-sync", "watch"]
-gulp.task "default", ["update", "generate", "deploy"]
+gulp.task "update", ["update-neat", "generate", "deploy"]
 
 gulp.task "watch", ->
   gulp.watch "theme/source/sass/*.scss", ["sass"]
@@ -38,7 +38,7 @@ gulp.task "coffee", ->
     .pipe gulp.dest("docs/latest/assets/js")
     .pipe browserSync.reload(stream: true)
 
-gulp.task "update", shell.task("bundle update neat && bundle exec neat update")
+gulp.task "update-neat", shell.task("bundle update neat && bundle exec neat update")
 
 gulp.task "sassdoc", ->
   gulp.src "./neat"

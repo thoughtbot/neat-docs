@@ -7,9 +7,8 @@ All the following commands should be run on `master`
 ```
 bundle install
 npm install
+npm install -g gulp
 ```
-
-You might need to `npm install -g gulp`
 
 #### Update the Theme
 
@@ -27,7 +26,7 @@ To update the docs, first update the version in the `package.json` to match the
 one [here](https://github.com/thoughtbot/neat/blob/master/lib/neat/version.rb), then run the following command:
 
 ```
-gulp
+gulp update
 ```
 
 This will update the Neat local folder, generate the docs, and deploy them to
