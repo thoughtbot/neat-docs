@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="{{ package.description }}">
-    <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Nunito:300,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600italic,600,700,700italic,900,300italic,300,200italic,200" rel="stylesheet" type="text/css">
     <title>{{ package.title }}</title>
     <link rel="stylesheet" href="assets/css/main.css" />
