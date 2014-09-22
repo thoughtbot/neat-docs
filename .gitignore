@@ -12,3 +12,5 @@ _config.yml
 pkg
 Gemfile.lock
 node_modules/
+theme/assets/css/
+theme/assets/js/
