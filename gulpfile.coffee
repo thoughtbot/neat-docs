@@ -26,7 +26,7 @@ gulp.task "watch", ->
 
 gulp.task "sass", ->
   gulp.src("theme/source/sass/*.scss")
-    .pipe sass(bundleExec: true)
+    .pipe sass(bundleExec: true, style: "compressed")
     .on "error", (error) -> gutil.log(error.message)
     .pipe prefix(["last 15 versions", "> 1%", "ie 9"], cascade: true)
     .pipe gulp.dest("theme/assets/css")
