@@ -7,12 +7,15 @@ prefix = require "gulp-autoprefixer"
 shell = require "gulp-shell"
 gutil = require "gulp-util"
 deploy = require "gulp-gh-pages"
+minifyHTML = require "gulp-minify-html"
 
 neatDocs = require "./package.json"
 version = neatDocs.version.replace(/\./g, "-")
 
 gulp.task "develop", ["browser-sync", "watch"]
-gulp.task "update", ["update-neat", "generate", "deploy"]
+gulp.task "minify", ["minify-html"]
+gulp.task "generate", ["sass", "coffee", "sassdoc"]
+gulp.task "update", ["update-neat", "generate", "minify", "deploy"]
 
 gulp.task "watch", ->
   gulp.watch "theme/source/sass/*.scss", ["sass"]
@@ -54,9 +57,10 @@ gulp.task "browser-sync", ["sass", "coffee"], ->
     host: "localhost"
     open: false
 
-gulp.task "generate", ["sass", "coffee", "sassdoc"], ->
-  gulp.src "./docs/latest/**/*"
-    .pipe gulp.dest "./docs/#{version}/"
+gulp.task "minify-html", ->
+  gulp.src "./docs/**/*.html"
+    .pipe minifyHTML()
+    .pipe gulp.dest "./docs/"
 
 gulp.task "deploy", ->
   gulp.src "./docs/**/*"

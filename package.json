@@ -17,6 +17,7 @@
     "gulp-autoprefixer": "0.0.8",
     "gulp-coffee": "^2.1.1",
     "gulp-gh-pages": "^0.3.4",
+    "gulp-minify-html": "^0.1.5",
     "gulp-ruby-sass": "^0.7.1",
     "gulp-sassdoc": "^1.0.0",
     "gulp-shell": "^0.2.9",
