@@ -14,7 +14,7 @@ version = neatDocs.version.replace(/\./g, "-")
 
 gulp.task "develop", ["browser-sync", "watch"]
 gulp.task "minify", ["minify-html"]
-gulp.task "update", ["update-neat", "generate", "minify", "deploy"]
+gulp.task "update", ["update-neat", "generate", "minify"]
 
 gulp.task "watch", ->
   gulp.watch "theme/source/sass/*.scss", ["sass"]
@@ -58,6 +58,7 @@ gulp.task "browser-sync", ["sass", "coffee"], ->
 
 gulp.task "minify-html", ->
   gulp.src "./docs/**/*.html"
+    .on "error", (error) -> gutil.log(error.message)
     .pipe minifyHTML()
     .pipe gulp.dest "./docs/"
 
