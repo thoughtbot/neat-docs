@@ -33,7 +33,7 @@
       {% endfor %}
     {% endfor %}
     <footer class="footer">
-      {# include "partials/footer.html.swig" #}
+      {% include "partials/footer.html.swig" %}
     </footer>
   </section>
 {% endblock %}
