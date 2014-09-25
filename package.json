@@ -30,5 +30,8 @@
     "swig-extras": "0.*",
     "themeleon": "1.*",
     "themeleon-swig": "1.*"
+  },
+  "devDependencies": {
+    "run-sequence": "^0.3.7"
   }
 }

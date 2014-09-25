@@ -12,10 +12,10 @@ npm install -g gulp
 
 #### Update the Theme
 
-For local theme development, run:
+For local preview/theme development, run:
 
 ```
-gulp develop
+gulp
 ```
 
 Then visit `http://localhost:3000/latest`
@@ -23,14 +23,27 @@ Then visit `http://localhost:3000/latest`
 #### Update the Docs
 
 To update the docs, first update the version in the `package.json` to match the
-one [here](https://github.com/thoughtbot/neat/blob/master/lib/neat/version.rb), then run the following command:
+one [here](https://github.com/thoughtbot/neat/blob/master/lib/neat/version.rb),
+then run the following command to update the local Neat folder:
 
 ```
 gulp update
 ```
 
-This will update the Neat local folder, generate the docs, and deploy them to
-`gh-pages`.
+To generate the updated the docs, run:
+
+```
+gulp build
+```
+
+To publish to `gh-pages`, run:
+
+```
+gulp deploy
+```
+
+Deploying does not commit your changes, so make sure you do so and push to
+`master`.
 
 #### Credits
 
