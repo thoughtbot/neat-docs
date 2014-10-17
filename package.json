@@ -22,7 +22,8 @@
     "gulp-sassdoc": "^1.0.0",
     "gulp-shell": "^0.2.9",
     "gulp-util": "^3.0.0",
-    "sassdoc": "^1.7.0",
+    "run-sequence": "^0.3.7",
+    "sassdoc": "^1.9.0",
     "sassdoc-filter": "^1.0.0",
     "sassdoc-indexer": "^1.0.0",
     "shrinkwrap": "^0.4.0",
@@ -30,8 +31,5 @@
     "swig-extras": "0.*",
     "themeleon": "1.*",
     "themeleon-swig": "1.*"
-  },
-  "devDependencies": {
-    "run-sequence": "^0.3.7"
   }
 }
