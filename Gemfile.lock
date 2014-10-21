@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:thoughtbot/neat.git
-  revision: f1a5ef8c4fa0de6cb63422725ba948b0e3b244ac
+  revision: 4cc5a327b4af7d6d6d01505b875639890a4bf2c4
   specs:
     neat (1.7.0)
       bourbon (>= 4.0)
