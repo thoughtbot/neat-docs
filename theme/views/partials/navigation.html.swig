@@ -6,7 +6,7 @@
     <li><a class="gitter" href="https://gitter.im/thoughtbot/neat">Gitter</a></li>
   </ul>
 
-  <a class="logo-container" href="/">
+  <a class="logo-container" href="//neat.bourbon.io">
     <img alt="Bourbon Neat Logo" class="logo" src="assets/images/neat-logo.svg">
   </a>
 
