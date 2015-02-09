@@ -1,18 +1,18 @@
 GIT
   remote: git@github.com:thoughtbot/neat.git
-  revision: 4cc5a327b4af7d6d6d01505b875639890a4bf2c4
+  revision: bff08df8fec78f1186428aaea49ab79f3a87b398
   specs:
-    neat (1.7.0)
+    neat (1.7.1)
       bourbon (>= 4.0)
       sass (>= 3.3)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    bourbon (4.0.2)
-      sass (~> 3.3)
+    bourbon (4.2.0)
+      sass (~> 3.4)
       thor
-    sass (3.4.6)
+    sass (3.4.11)
     thor (0.19.1)
 
 PLATFORMS
@@ -20,3 +20,4 @@ PLATFORMS
 
 DEPENDENCIES
   neat!
+  sass (~> 3.4.11)

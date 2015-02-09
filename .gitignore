@@ -11,5 +11,4 @@ examples/
 _config.yml
 pkg
 node_modules/
-theme/assets/css/
-theme/assets/js/
+sassdoc-data.json

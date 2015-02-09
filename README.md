@@ -10,30 +10,12 @@ npm install
 npm install -g gulp
 ```
 
-#### Update the Theme
-
-For local preview/theme development, run:
-
-```
-gulp
-```
-
-Then visit `http://localhost:3000/latest`
-
 #### Update the Docs
 
-To update the docs, first update the version in the `package.json` to match the
-one [here](https://github.com/thoughtbot/neat/blob/master/lib/neat/version.rb),
-then run the following command to update the local Neat folder:
+To update the docs, run:
 
 ```
 gulp update
-```
-
-To generate the updated the docs, run:
-
-```
-gulp build
 ```
 
 To publish to `gh-pages`, run:
@@ -53,4 +35,4 @@ Neat is maintained and funded by [thoughtbot, inc](http://thoughtbot.com). Tweet
 
 #### License
 
-Copyright © 2012–2014 [thoughtbot, inc](http://thoughtbot.com). Neat is free software, and may be redistributed under the terms specified in the [license](LICENSE.md).
+Copyright © 2012–2015 [thoughtbot, inc](http://thoughtbot.com). Neat is free software, and may be redistributed under the terms specified in the [license](LICENSE.md).

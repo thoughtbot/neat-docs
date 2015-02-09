@@ -1,6 +1,6 @@
 {
   "name": "neat-docs",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Docs for Bourbon Neat",
   "title": "Bourbon Neat Docs",
   "author": "thoughtbot, Inc",
@@ -10,26 +10,17 @@
     "url": "https://github.com/kaishin/neat-docs.git"
   },
   "dependencies": {
-    "browser-sync": "^1.3.5",
-    "coffee-script": "^1.7.1",
-    "extend": "1.*",
+    "browser-sync": "^2.0.0-rc10",
+    "coffee-script": "^1.9.0",
+    "file-reader": "^1.0.0",
     "gulp": "^3.8.7",
-    "gulp-autoprefixer": "0.0.8",
-    "gulp-coffee": "^2.1.1",
-    "gulp-gh-pages": "^0.3.4",
-    "gulp-minify-html": "^0.1.5",
-    "gulp-ruby-sass": "^0.7.1",
-    "gulp-sassdoc": "^1.0.0",
-    "gulp-shell": "^0.2.9",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-minify-html": "^0.1.8",
+    "gulp-shell": "^0.2.11",
     "gulp-util": "^3.0.0",
-    "run-sequence": "^0.3.7",
-    "sassdoc": "^1.9.0",
-    "sassdoc-filter": "^1.0.0",
-    "sassdoc-indexer": "^1.0.0",
-    "shrinkwrap": "^0.4.0",
-    "swig": "1.3.*",
-    "swig-extras": "0.*",
-    "themeleon": "1.*",
-    "themeleon-swig": "1.*"
+    "gulp-bump": "^0.1.13",
+    "run-sequence": "^1.0.2",
+    "sassdoc": "^2.0.4",
+    "sassdoc-theme-neat": "^0.0.1"
   }
 }

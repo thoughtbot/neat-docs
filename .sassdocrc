@@ -1,0 +1,36 @@
+{
+  "dest": "./docs/latest/",
+  "theme": "neat",
+  "groups": {
+    "undefined": "General"
+  },
+  "display": {
+    "access": ["public"],
+    "alias": false
+  },
+  "package": "package.json",
+  "view": {
+    "baseSourcePath": "https://github.com/thoughtbot/neat/tree/master/app/assets/stylesheets",
+    "faviconPath": "http://neat.bourbon.io/favicon.ico",
+    "library": {
+      "homepage": "//neat.bourbon.io",
+      "name": "neat"
+    },
+    "logoPath": "http://neat.bourbon.io/images/logo.svg",
+    "company": {
+      "name": "thoughbot, Inc.",
+      "logoPath": "https://raw.githubusercontent.com/thoughtbot/presskit/master/logo/circle/png/robot_only_default.png",
+      "homepage": "https://thoughtbot.com",
+      "trademarkYears": "2012-2015"
+    },
+    "links": {
+      "github": "https://github.com/thoughtbot/neat",
+      "twitter": "https://twitter.com/bourbonsass",
+      "gitter": "https://gitter.im/thoughtbot/neat"
+    },
+    "analytics": {
+      "account": "UA-1485842-21",
+      "domain": "bourbon.io"
+    }
+  }
+}

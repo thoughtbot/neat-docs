@@ -1,78 +1,57 @@
-gulp = require "gulp"
 browserSync = require "browser-sync"
-sass = require "gulp-ruby-sass"
-sassdoc = require "gulp-sassdoc"
-coffee = require "gulp-coffee"
-prefix = require "gulp-autoprefixer"
-shell = require "gulp-shell"
-gutil = require "gulp-util"
 deploy = require "gulp-gh-pages"
+gulp = require "gulp"
+gutil = require "gulp-util"
 minifyHTML = require "gulp-minify-html"
 runSequence = require "run-sequence"
+sassdoc = require "sassdoc"
+shell = require "gulp-shell"
+theme = require "sassdoc-theme-neat"
+read = require "file-reader"
+bump = require "gulp-bump"
 
-neatDocs = require "./package.json"
-version = neatDocs.version.replace(/\./g, "-")
+version = read.file("./neat/_neat.scss").match(/[0-9]*\.[0-9]*\.[0-9]*/g).toString()
+dasherizedVersion = version.replace(/\./g, "-")
 
-gulp.task "default", ["develop"]
-gulp.task "develop", ["browser-sync", "watch"]
-gulp.task "minify", ["minify-html"]
-gulp.task "update-docs", ["generate", "minify"]
+gulp.task "default", ["browser-sync", "watch"]
 
 gulp.task "build", ->
-  runSequence "generate", "minify"
-
-gulp.task "all-the-things", ->
-  runSequence "update", "build", "deploy"
+  runSequence "minify", "copy", "bump"
 
 gulp.task "watch", ->
-  gulp.watch "theme/source/sass/*.scss", ["sass"]
   gulp.watch "neat/**/*.scss", ["sassdoc"]
-  gulp.watch "theme/source/coffeescript/*.coffee", ["coffee"]
-  gulp.watch "theme/views/**/*.swig", ["sassdoc"]
   gulp.watch "docs/**/*.html", -> browserSync.reload()
 
-gulp.task "sass", ->
-  gulp.src("theme/source/sass/*.scss")
-    .pipe sass(bundleExec: true, style: "compressed")
-    .on "error", (error) -> gutil.log(error.message)
-    .pipe prefix(["last 15 versions", "> 1%", "ie 9"], cascade: true)
-    .pipe gulp.dest("theme/assets/css")
-    .pipe gulp.dest("docs/latest/assets/css")
-    .pipe browserSync.reload(stream: true)
+gulp.task "update", ->
+  runSequence "update-neat", "sassdoc"
 
-gulp.task "coffee", ->
-  gulp.src("theme/source/coffeescript/*.coffee")
-    .pipe coffee bare: true
-    .on "error", (error) -> gutil.log(error.message)
-    .pipe gulp.dest("theme/assets/js")
-    .pipe gulp.dest("docs/latest/assets/js")
-    .pipe browserSync.reload(stream: true)
+gulp.task "update-neat", shell.task("bundle update neat && bundle exec neat update")
 
-gulp.task "update", shell.task("bundle update neat && bundle exec neat update")
+gulp.task "bump", ->
+  gulp.src "./package.json"
+    .pipe bump version: version
+    .pipe gulp.dest("./")
 
 gulp.task "sassdoc", ->
-  gulp.src "./neat"
-    .pipe sassdoc
-      dest: "./docs/latest/"
-      theme: "theme"
-      config: "./theme/view.json"
+  gulp.src "./neat/**/*.scss"
+    .pipe sassdoc()
 
-gulp.task "browser-sync", ["sass", "coffee"], ->
-  browserSync.init null,
+gulp.task "minify", ->
+  gulp.src "./docs/latest/**/*.html"
+    .pipe minifyHTML()
+    .pipe gulp.dest "./docs/latest/"
+
+gulp.task "browser-sync", ->
+  browserSync
     server:
       baseDir: "docs"
     host: "localhost"
     open: false
 
-gulp.task "minify-html", ->
-  gulp.src "./docs/**/*.html"
-    .pipe minifyHTML()
-    .pipe gulp.dest "./docs/"
-
-gulp.task "generate", ["sass", "coffee", "sassdoc"], ->
+gulp.task "copy", ->
   gulp.src "./docs/latest/**/*"
-    .pipe gulp.dest "./docs/#{version}/"
+    .pipe gulp.dest "./docs/#{dasherizedVersion}/"
 
-gulp.task "deploy", ->
+gulp.task "deploy", ["build"], ->
   gulp.src "./docs/**/*"
     .pipe deploy()
