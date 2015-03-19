@@ -15,7 +15,7 @@
     "file-reader": "^1.0.0",
     "gulp": "^3.8.7",
     "gulp-gh-pages": "^0.4.0",
-    "gulp-minify-html": "^0.1.8",
+    "gulp-minify-html": "^1.0.1",
     "gulp-shell": "^0.2.11",
     "gulp-util": "^3.0.0",
     "gulp-bump": "^0.1.13",
