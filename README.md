@@ -12,7 +12,7 @@ npm install -g gulp
 
 #### Update the Docs
 
-To update the docs, run:
+To update the docs, change the version number in `package.json` and run:
 
 ```
 gulp update
