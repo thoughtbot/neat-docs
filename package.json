@@ -21,6 +21,6 @@
     "gulp-bump": "^0.1.13",
     "run-sequence": "^1.0.2",
     "sassdoc": "^2.0.4",
-    "sassdoc-theme-neat": "^0.0.1"
+    "sassdoc-theme-neat": "^0.0.2"
   }
 }
