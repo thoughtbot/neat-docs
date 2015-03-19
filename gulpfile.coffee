@@ -2,7 +2,6 @@ browserSync = require "browser-sync"
 deploy = require "gulp-gh-pages"
 gulp = require "gulp"
 gutil = require "gulp-util"
-minifyHTML = require "gulp-minify-html"
 runSequence = require "run-sequence"
 sassdoc = require "sassdoc"
 shell = require "gulp-shell"
@@ -16,7 +15,7 @@ dasherizedVersion = version.replace(/\./g, "-")
 gulp.task "default", ["browser-sync", "watch"]
 
 gulp.task "build", ->
-  runSequence "minify", "copy", "bump"
+  runSequence "copy", "bump"
 
 gulp.task "watch", ->
   gulp.watch "neat/**/*.scss", ["sassdoc"]
@@ -35,11 +34,6 @@ gulp.task "bump", ->
 gulp.task "sassdoc", ->
   gulp.src "./neat/**/*.scss"
     .pipe sassdoc()
-
-gulp.task "minify", ->
-  gulp.src "./docs/latest/**/*.html"
-    .pipe minifyHTML()
-    .pipe gulp.dest "./docs/latest/"
 
 gulp.task "browser-sync", ->
   browserSync
