@@ -53,6 +53,8 @@
 
   <li><a href="#pad">pad</a></li>
 
+  <li><a href="#reset-display">reset-display</a></li>
+
   <li><a href="#row">row</a></li>
 
   <li><a href="#shift">shift</a></li>
@@ -61,11 +63,11 @@
 
   <li><a href="#span-columns">span-columns</a></li>
 
-  <li><a href="#reset-display">reset-display</a></li>
-
   <li><a href="#reset-layout-direction">reset-layout-direction</a></li>
 
   <li><a href="#reset-all">reset-all</a></li>
+
+  <li><a href="#clearfix">clearfix</a></li>
 
 
         
@@ -262,17 +264,17 @@
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  @include direction-context(right-to-left) {
-   .right-to-left-block {
-     @include span-columns(6);
-    }
-  }</code></pre>
+</h4><code>@include direction-context(right-to-left) {
+ .right-to-left-block {
+   @include span-columns(6);
+  }
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  .right-to-left-block {
-    float: right;
-     ...
-  }</code></pre>
+</h4><code>.right-to-left-block {
+  float: right;
+   ...
+}</code></pre>
       
     </section>
 
@@ -407,16 +409,16 @@
     <h3 class="sub-heading">Example</h3>
 
     
-      <pre class="code language-scss"><code>  @include display-context(table) {
-   .display-table {
-     @include span-columns(6);
-    }
-  }</code></pre>
+      <pre class="code language-scss"><code>@include display-context(table) {
+ .display-table {
+   @include span-columns(6);
+  }
+}</code></pre>
       
-      <pre class="code language-css"><code>  .display-table {
-     display: table-cell;
-     ...
-  }</code></pre>
+      <pre class="code language-css"><code>.display-table {
+   display: table-cell;
+   ...
+}</code></pre>
       
     </section>
 
@@ -519,15 +521,15 @@
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include fill-parent;
-  }</code></pre>
+</h4><code>.element {
+  @include fill-parent;
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  .element {
-    width: 100%;
-    box-sizing: border-box;
-  }</code></pre>
+</h4><code>.element {
+  width: 100%;
+  box-sizing: border-box;
+}</code></pre>
       
     </section>
 
@@ -692,44 +694,44 @@
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .responsive-element {
-     @include media(769px) {
-       @include span-columns(6);
-     }
-  }
-
- .new-context-element {
-   @include media(min-width 320px max-width 480px, 6) {
-     @include span-columns(6);
-   }
- }</code></pre>
-      
-      <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code> @media screen and (min-width: 769px) {
-   .responsive-element {
-     display: block;
-     float: left;
-     margin-right: 2.35765%;
-     width: 48.82117%;
-   }
-
-   .responsive-element:last-child {
-     margin-right: 0;
-   }
+</h4><code> .responsive-element {
+    @include media(769px) {
+      @include span-columns(6);
+    }
  }
 
- @media screen and (min-width: 320px) and (max-width: 480px) {
-   .new-context-element {
-     display: block;
-     float: left;
-     margin-right: 4.82916%;
-     width: 100%;
-   }
+.new-context-element {
+  @include media(min-width 320px max-width 480px, 6) {
+    @include span-columns(6);
+  }
+}</code></pre>
+      
+      <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
+</h4><code>@media screen and (min-width: 769px) {
+  .responsive-element {
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+  }
 
-   .new-context-element:last-child {
-     margin-right: 0;
-   }
- }</code></pre>
+  .responsive-element:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .new-context-element {
+    display: block;
+    float: left;
+    margin-right: 4.82916%;
+    width: 100%;
+  }
+
+  .new-context-element:last-child {
+    margin-right: 0;
+  }
+}</code></pre>
       
     </section>
 
@@ -867,26 +869,26 @@
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include omega;
-  }
+</h4><code>.element {
+  @include omega;
+}
 
-  .nth-element {
-    @include omega(4n);
-  }</code></pre>
+.nth-element {
+  @include omega(4n);
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  .element {
-    margin-right: 0;
-  }
+</h4><code>.element {
+  margin-right: 0;
+}
 
-  .nth-element:nth-child(4n) {
-    margin-right: 0;
-  }
+.nth-element:nth-child(4n) {
+  margin-right: 0;
+}
 
-  .nth-element:nth-child(4n+1) {
-    clear: left;
-  }</code></pre>
+.nth-element:nth-child(4n+1) {
+  clear: left;
+}</code></pre>
       
     </section>
 
@@ -979,7 +981,7 @@
       
         
         
-  <p><p>Makes an element a outer container by centring it in the viewport, clearing its floats, and setting its <code>max-width</code>.
+  <p><p>Makes an element a outer container by centering it in the viewport, clearing its floats, and setting its <code>max-width</code>.
 Although optional, using <code>outer-container</code> is recommended. The mixin can be called on more than one element per page, as long as they are not nested.</p>
 </p>
 
@@ -1023,26 +1025,22 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include outer-container(100%);
-  }</code></pre>
+</h4><code>.element {
+  @include outer-container(100%);
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  .element {
-    *zoom: 1;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+</h4><code>.element {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .element:before, .element:after {
-    content: &quot; &quot;;
-    display: table;
-  }
-
-  .element:after {
-    clear: both;
-  }</code></pre>
+.element::after {
+  clear: both;
+  content: &quot;&quot;;
+  display: table;
+}</code></pre>
       
     </section>
 
@@ -1178,14 +1176,123 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include pad(30px -20px 10px default);
-  }</code></pre>
+</h4><code>.element {
+  @include pad(30px -20px 10px default);
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  .element {
-    padding: 30px -20px 10px 2.35765%;
-  }</code></pre>
+</h4><code>.element {
+  padding: 30px -20px 10px 2.35765%;
+}</code></pre>
+      
+    </section>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="reset-display" data-name="reset-display" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#reset-display">
+      reset-display
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+  <a class="view-source" href="https://github.com/thoughtbot/neat/tree/master/app/assets/stylesheets/grid/_reset-display.scss">View source</a>
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+    <pre class="code language-scss"><code>@mixin reset-display() { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Resets the active display property to <code>block</code>. Particularly useful when changing the display property in a single row.</p>
+</p>
+
+
+      
+        
+        
+    <p>This mixin takes no parameters.</p>
+
+
+      
+        
+        
+
+      
+        
+        
+  <section class="example">
+    <h3 class="sub-heading">Example</h3>
+
+    
+      <pre class="code language-scss"><h4 class="description"><p>Usage</p>
+</h4><code>.element {
+  @include row(table);
+  // Context changed to table display
+}
+
+@include reset-display;
+// Context is reset to block display</code></pre>
       
     </section>
 
@@ -1351,9 +1458,9 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code> .element {
-   @include row();
- }</code></pre>
+</h4><code>.element {
+  @include row();
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
 </h4><code> .element {
@@ -1504,14 +1611,14 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include shift(-3);
-  }</code></pre>
+</h4><code>.element {
+  @include shift(-3);
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS output</p>
-</h4><code>  .element {
-    margin-left: -25.58941%;
-  }</code></pre>
+</h4><code>.element {
+  margin-left: -25.58941%;
+}</code></pre>
       
     </section>
 
@@ -1644,14 +1751,14 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include shift(-3 of 6);
-  }</code></pre>
+</h4><code>.element {
+  @include shift(-3 of 6);
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS output</p>
-</h4><code>  .element {
-    margin-left: -52.41458%;
-  }</code></pre>
+</h4><code>.element {
+  margin-left: -52.41458%;
+}</code></pre>
       
     </section>
 
@@ -1796,7 +1903,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
     </dt>
     <dd class="parameter-definition">
       <div class="description">
-        <p>Sets the display property of the element. By default it sets the display propert of the element to <code>block</code>.</p>
+        <p>Sets the display property of the element. By default it sets the display property of the element to <code>block</code>.</p>
 <p>  If passed <code>block-collapse</code>, it also removes the margin gutter by adding it to the element width.</p>
 <p>  If passed <code>table</code>, it sets the display property to <code>table-cell</code> and calculates the width of the element without taking gutters into consideration. The result does not align with the block-based grid.</p>
 
@@ -1818,145 +1925,36 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include span-columns(6);
+</h4><code> .element {
+   @include span-columns(6);
 
-   .nested-element {
-     @include span-columns(2 of 6);
-   }
- }</code></pre>
+  .nested-element {
+    @include span-columns(2 of 6);
+  }
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  .element {
-    display: block;
-    float: left;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-  }
+</h4><code>.element {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
 
-  .element:last-child {
-    margin-right: 0;
-  }
+.element:last-child {
+  margin-right: 0;
+}
 
-  .element .nested-element {
-    display: block;
-    float: left;
-    margin-right: 4.82916%;
-    width: 30.11389%;
-  }
+.element .nested-element {
+  display: block;
+  float: left;
+  margin-right: 4.82916%;
+  width: 30.11389%;
+}
 
-  .element .nested-element:last-child {
-    margin-right: 0;
-  }</code></pre>
-      
-    </section>
-
-
-      
-        
-        
-
-      
-        
-        
-
-      
-        
-        
-
-
-
-
-      
-        
-        
-
-      
-        
-        
-
-      
-        
-        
-
-      
-    
-  </div>
-</article>
-
-  
-    
-
-<article id="reset-display" data-name="reset-display" data-type="mixin" class="item"
-  
-  >
-  <div data-role="content-wrapper">
-    <header class="title-bar">
-  <h2 class="item-title">
-    <a href="#reset-display">
-      reset-display
-    </a>
-  </h2>
-
-  
-
-  <div class="metadata">
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
-  <a class="view-source" href="https://github.com/thoughtbot/neat/tree/master/app/assets/stylesheets/grid/_to-deprecate.scss">View source</a>
-  
-</header>
-
-    <div class="declaration">
-  
-    
-    
-    <pre class="code language-scss"><code>@mixin reset-display() { ... }</code></pre>
-  
-</div>
-
-
-    
-      
-        
-        
-  <p><p>Resets the active display property to <code>block</code>. Particularly useful when changing the display property in a single row.</p>
-</p>
-
-
-      
-        
-        
-    <p>This mixin takes no parameters.</p>
-
-
-      
-        
-        
-
-      
-        
-        
-  <section class="example">
-    <h3 class="sub-heading">Example</h3>
-
-    
-      <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include row(table);
-    // Context changed to table display
-  }
-
-  @include reset-display;
-  // Context is reset to block display</code></pre>
+.element .nested-element:last-child {
+  margin-right: 0;
+}</code></pre>
       
     </section>
 
@@ -2059,13 +2057,13 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include row($direction: RTL);
-    // Context changed to right-to-left
-  }
+</h4><code>.element {
+  @include row($direction: RTL);
+  // Context changed to right-to-left
+}
 
-  @include reset-layout-direction;
-  // Context is reset to left-to-right</code></pre>
+@include reset-layout-direction;
+// Context is reset to left-to-right</code></pre>
       
     </section>
 
@@ -2168,13 +2166,13 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  .element {
-    @include row(table, RTL);
-    // Context changed to table table and right-to-left
-  }
+</h4><code>.element {
+  @include row(table, RTL);
+  // Context changed to table table and right-to-left
+}
 
-  @include reset-all;
-  // Context is reset to block display and left-to-right</code></pre>
+@include reset-all;
+// Context is reset to block display and left-to-right</code></pre>
       
     </section>
 
@@ -2201,6 +2199,130 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
       
         
         
+
+      
+        
+        
+
+      
+    
+  </div>
+</article>
+
+  
+    
+
+<article id="clearfix" data-name="clearfix" data-type="mixin" class="item"
+  
+  >
+  <div data-role="content-wrapper">
+    <header class="title-bar">
+  <h2 class="item-title">
+    <a href="#clearfix">
+      clearfix
+    </a>
+  </h2>
+
+  
+
+  <div class="metadata">
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+  <a class="view-source" href="https://github.com/thoughtbot/neat/tree/master/app/assets/stylesheets/mixins/_clearfix.scss">View source</a>
+  
+</header>
+
+    <div class="declaration">
+  
+    
+    
+    <pre class="code language-scss"><code>@mixin clearfix() { ... }</code></pre>
+  
+</div>
+
+
+    
+      
+        
+        
+  <p><p>Provides an easy way to include a clearfix for containing floats.</p>
+</p>
+
+
+      
+        
+        
+    <p>This mixin takes no parameters.</p>
+
+
+      
+        
+        
+
+      
+        
+        
+  <section class="example">
+    <h3 class="sub-heading">Example</h3>
+
+    
+      <pre class="code language-scss"><code>.element {
+  @include clearfix;
+}</code></pre>
+      
+      <pre class="code language-css"><code>.element::after {
+  clear: both;
+  content: &quot;&quot;;
+  display: block;
+}</code></pre>
+      
+    </section>
+
+
+      
+        
+        
+
+      
+        
+        
+
+      
+        
+        
+
+
+
+
+      
+        
+        
+
+      
+        
+        
+  <h3 class="sub-heading">Links</h3>
+
+  <ul class="list-unstyled">
+  
+    <li>
+      <a href="http://goo.gl/yP5hiZ">
+        
+          http://goo.gl/yP5hiZ
+        
+      </a>
+    </li>
+  
+  </ul>
+
 
       
         
@@ -2354,26 +2476,26 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-scss"><h4 class="description"><p>Usage</p>
-</h4><code>  $mobile: new-breakpoint(max-width 480px 4);
+</h4><code>$mobile: new-breakpoint(max-width 480px 4);
 
-  .element {
-    @include media($mobile) {
-      @include span-columns(4);
-    }
-  }</code></pre>
+.element {
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+}</code></pre>
       
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  @media screen and (max-width: 480px) {
-    .element {
-      display: block;
-      float: left;
-      margin-right: 7.42297%;
-      width: 100%;
-    }
-    .element:last-child {
-      margin-right: 0;
-    }
-  }</code></pre>
+</h4><code>@media screen and (max-width: 480px) {
+  .element {
+    display: block;
+    float: left;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  .element:last-child {
+    margin-right: 0;
+  }
+}</code></pre>
       
     </section>
 
@@ -2552,7 +2674,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     <div class="declaration">
   
-    <pre class="code language-scss"><code>$column: modular-scale(3, 1em, $golden) !default;</code></pre>
+    <pre class="code language-scss"><code>$column: 4.2358em !default;</code></pre>
 
   
 </div>
@@ -2562,7 +2684,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
       
         
         
-  <p><p>Sets the relative width of a single grid column. The unit used should be the same one used to define <code>$gutter</code>. To learn more about modular-scale() see <a href="http://bourbon.io/docs/#modular-scale">Bourbon docs</a>. Set with a <code>!global</code> flag.</p>
+  <p><p>Sets the relative width of a single grid column. The unit used should be the same one used to define <code>$gutter</code>. Set with a <code>!global</code> flag.</p>
 </p>
 
 
@@ -2637,7 +2759,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     <div class="declaration">
   
-    <pre class="code language-scss"><code>$gutter: modular-scale(1, 1em, $golden) !default;</code></pre>
+    <pre class="code language-scss"><code>$gutter: 1.618em !default;</code></pre>
 
   
 </div>
@@ -2647,7 +2769,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
       
         
         
-  <p><p>Sets the relative width of a single grid gutter. The unit used should be the same one used to define <code>$column</code>. To learn more about modular-scale() see <a href="http://bourbon.io/docs/#modular-scale">Bourbon docs</a>. Set with the <code>!global</code> flag.</p>
+  <p><p>Sets the relative width of a single grid gutter. The unit used should be the same one used to define <code>$column</code>. Set with the <code>!global</code> flag.</p>
 </p>
 
 
@@ -2807,7 +2929,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     <div class="declaration">
   
-    <pre class="code language-scss"><code>$max-width: em(1088) !default;</code></pre>
+    <pre class="code language-scss"><code>$max-width: 1200px !default;</code></pre>
 
   
 </div>
@@ -2817,7 +2939,7 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
       
         
         
-  <p><p>Sets the max-width property of the element that includes <code>outer-container()</code>. To learn more about <code>em()</code> see <a href="http://bourbon.io/docs/#px-to-em">Bourbon docs</a>. Set with the <code>!global</code> flag.</p>
+  <p><p>Sets the max-width property of the element that includes <code>outer-container()</code>. Set with the <code>!global</code> flag.</p>
 </p>
 
 
@@ -2918,12 +3040,12 @@ Although optional, using <code>outer-container</code> is recommended. The mixin 
 
     
       <pre class="code language-css"><h4 class="description"><p>CSS Output</p>
-</h4><code>  html {
-    box-sizing: border-box; }
+</h4><code>html {
+  box-sizing: border-box; }
 
-  *, *::after, *::before {
-    box-sizing: inherit;
-  }</code></pre>
+*, *::after, *::before {
+  box-sizing: inherit;
+}</code></pre>
       
     </section>
 

@@ -9,7 +9,7 @@ theme = require "sassdoc-theme-neat"
 read = require "file-reader"
 bump = require "gulp-bump"
 
-version = read.file("./neat/_neat.scss").match(/[0-9]*\.[0-9]*\.[0-9]*/g).toString()
+version = read.file("neat/_neat.scss").match(/[0-9]*\.[0-9]*\.[0-9]*/g).toString()
 dasherizedVersion = version.replace(/\./g, "-")
 
 gulp.task "default", ["browser-sync", "watch"]
