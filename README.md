@@ -1,4 +1,8 @@
-## Neat Documentation
+# Neat Documentation
+
+**Note:** This is the source to the old (v1) Neat website, is no longer used or
+being actively maintained. The new website source can be found here:
+https://github.com/thoughtbot/neat.bourbon.io.
 
 All the following commands should be run on `master`
 
